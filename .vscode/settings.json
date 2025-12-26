@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "ballOnAroll.slnx"
+    "dotnet.defaultSolution": "ballOnAroll.slnx",
+    "editor.formatOnSave": true
 }
