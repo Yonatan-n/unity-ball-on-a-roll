@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,12 +6,18 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
+    int count;
     float movementX;
     float movementY;
     [SerializeField] float speed = 10;
+    [SerializeField] TextMeshProUGUI countText;
+    [SerializeField] TextMeshProUGUI winText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        count = 0;
+        setCountText();
         rb = GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
@@ -23,6 +30,9 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
+            count++;
+            setCountText();
+            checkWonSequence();
         }
     }
 
@@ -38,5 +48,15 @@ public class PlayerController : MonoBehaviour
         movementX = movementVector.x;
         movementY = movementVector.y;
     }
-
+    void setCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+    }
+    void checkWonSequence()
+    {
+        if (count == 3)
+        {
+            winText.gameObject.SetActive(true);
+        }
+    }
 }
