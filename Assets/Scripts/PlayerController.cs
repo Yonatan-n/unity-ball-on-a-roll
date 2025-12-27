@@ -37,6 +37,16 @@ public class PlayerController : MonoBehaviour
             checkWonSequence();
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // destroy player
+            Destroy(gameObject);
+            winText.gameObject.SetActive(true);
+            winText.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -59,6 +69,7 @@ public class PlayerController : MonoBehaviour
         if (count == totalPickup)
         {
             winText.gameObject.SetActive(true);
+            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
         }
     }
 }
