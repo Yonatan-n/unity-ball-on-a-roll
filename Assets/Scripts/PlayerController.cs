@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     int count;
     float movementX;
     float movementY;
+    int totalPickup;
     [SerializeField] float speed = 10;
     [SerializeField] TextMeshProUGUI countText;
     [SerializeField] TextMeshProUGUI winText;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
         setCountText();
         rb = GetComponent<Rigidbody>();
+        totalPickup = GameObject.FindGameObjectsWithTag("PickUp").Length;
     }
     private void FixedUpdate()
     {
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour
     }
     void checkWonSequence()
     {
-        if (count == 3)
+        if (count == totalPickup)
         {
             winText.gameObject.SetActive(true);
         }
