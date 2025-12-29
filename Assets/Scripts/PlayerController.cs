@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;
+    public Rigidbody rb;
     int count;
     float movementX;
     float movementY;
