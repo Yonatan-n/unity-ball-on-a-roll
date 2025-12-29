@@ -3,7 +3,7 @@ using UnityEngine;
 public class LaunchPad : MonoBehaviour
 {
 
-    float JUMP_HIGHT = 10.0f;
+    float JUMP_HIGHT = 20.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
