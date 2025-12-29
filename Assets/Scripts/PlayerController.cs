@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     float movementX;
     float movementY;
     int totalPickup;
+    public float GROUND_LIMIT = -5f;
     [SerializeField] float speed = 10;
     [SerializeField] TextMeshProUGUI countText;
     [SerializeField] TextMeshProUGUI winText;
@@ -43,20 +44,31 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // destroy player
-            Destroy(gameObject);
-            winText.gameObject.SetActive(true);
-            winText.GetComponent<TextMeshProUGUI>().text = "You Lose!";
-            nextLevelButton.gameObject.SetActive(true);
-            nextLevelButton.onClick.AddListener(SceneLoader.ReloadCurrentScene);
-            nextLevelButton.GetComponent<TextMeshProUGUI>().text = "Restart Level";
+            LostSequence();
         }
+    }
+
+    private void LostSequence()
+    {
+        // destroy player
+        Destroy(gameObject);
+        TextMeshProUGUI message = winText.GetComponent<TextMeshProUGUI>();
+        message.text = "You Lose!";
+        message.color = new Color32(210, 0, 0, 255);
+
+        winText.gameObject.SetActive(true);
+        nextLevelButton.gameObject.SetActive(true);
+        nextLevelButton.onClick.AddListener(SceneLoader.ReloadCurrentScene);
+        nextLevelButton.GetComponentInChildren<TextMeshProUGUI>().text = "Restart Level";
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (gameObject.transform.position.y < GROUND_LIMIT)
+        {
+            LostSequence();
+        }
     }
 
     void OnMove(InputValue movementValue)
@@ -67,6 +79,7 @@ public class PlayerController : MonoBehaviour
     }
     void setCountText()
     {
+        Debug.Log("count set");
         countText.text = "Count: " + count.ToString();
     }
     void checkWonSequence()
@@ -74,11 +87,12 @@ public class PlayerController : MonoBehaviour
         if (count == totalPickup)
         {
             winText.gameObject.SetActive(true);
-            // TODO: make the canvas a prefab, use it in every scene
-            // after that every scene will have a nextLevelbutton in it, this will not raise an excpetion
             // Game TODO: add another level with multiple coins
             // add another level with 2 coins and 1 enemy
-            // add fall out of world detection (lose)
+            // add parkor level, that need to be precise
+            // add jump pad, launch to ball like 10f in the air, can be used for parkor and jumb above walls
+            // lock/key thing? might need some assets for that
+            // procuderal generaion levels? maybe after game is beat
             // add final level beat (back to main menu)
             // add background music, sound effects on coin pickup, win/lose
             // in options add volume control, mute, change ball skins like tennis, bowling ball, moon

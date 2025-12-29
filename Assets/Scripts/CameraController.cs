@@ -8,12 +8,18 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         // transform.position = player.transform.position;
-        offset = transform.position - player.transform.position;
+        if (player != null)
+        {
+            offset = transform.position - player.transform.position;
+        }
     }
 
     // LateUpdate is called once per frame after all Update functions have been completed.
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        if (player != null)
+        {
+            transform.position = player.transform.position + offset;
+        }
     }
 }
