@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         count = 0;
-        setCountText();
         rb = GetComponent<Rigidbody>();
         totalPickup = GameObject.FindGameObjectsWithTag("PickUp").Length;
     }
@@ -34,8 +33,10 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
-            other.gameObject.SetActive(false);
+            AudioSource PickUpAudio = gameObject.gameObject.GetComponent<AudioSource>();
+            PickUpAudio.Play();
             count++;
+            other.gameObject.SetActive(false);
             setCountText();
             checkWonSequence();
         }
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
             winText.gameObject.SetActive(true);
             // Game TODO: add another level with multiple coins
             // add another level with 2 coins and 1 enemy
-            // add parkor level, that need to be precise
+            // add parkor level, that need to be precise (maybe 1 jumpers, mostly turns and falling to other platforms)
             // add jump pad, launch to ball like 10f in the air, can be used for parkor and jumb above walls
             // lock/key thing? might need some assets for that
             // procuderal generaion levels? maybe after game is beat
