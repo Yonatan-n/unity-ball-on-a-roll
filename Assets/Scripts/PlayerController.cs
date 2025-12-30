@@ -21,8 +21,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         count = 0;
-        rb = GetComponent<Rigidbody>();
         totalPickup = GameObject.FindGameObjectsWithTag("PickUp").Length;
+        rb = GetComponent<Rigidbody>();
+        setCountText();
     }
     private void FixedUpdate()
     {
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
     void setCountText()
     {
         Debug.Log("count set");
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Coins: " + count.ToString() + " / " + totalPickup;
     }
     void checkWonSequence()
     {
