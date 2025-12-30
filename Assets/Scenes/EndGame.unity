@@ -785,17 +785,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6532348457729366799, guid: 04f7e4b8161ef3c41b554f7a95f3778c, type: 3}
   m_PrefabInstance: {fileID: 850825580}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1565125876 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6474281528732622188, guid: 04f7e4b8161ef3c41b554f7a95f3778c, type: 3}
-  m_PrefabInstance: {fileID: 850825580}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1653640472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1030,7 @@ Skybox:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850032706}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: bc956c2a94277984ab315b9e44015434, type: 2}
+  m_CustomSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1850032711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,28 +1337,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933772186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99985e0f10218d48b64de2ff2f5a093, type: 3}
+  m_Script: {fileID: 11500000, guid: 48e37e3b05f4c8e40b0dc827d2eaadf5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StartMenu
-  startButton: {fileID: 1654159128}
-  optionsButton: {fileID: 1937584435}
-  exitButton: {fileID: 1565125876}
+  m_EditorClassIdentifier: '::'
+  backToMenu: {fileID: 1654159128}
 --- !u!224 &1937584434 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6532348457729366799, guid: 04f7e4b8161ef3c41b554f7a95f3778c, type: 3}
   m_PrefabInstance: {fileID: 986865327}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1937584435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6474281528732622188, guid: 04f7e4b8161ef3c41b554f7a95f3778c, type: 3}
-  m_PrefabInstance: {fileID: 986865327}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &2035653686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +1403,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Beat Big Ball Adventure!
+  m_text: 'Victory!
+
+    You Won Big Ball Adventure!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -1439,12 +1417,12 @@ MonoBehaviour:
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 1
-  m_colorMode: 3
+  m_colorMode: 0
   m_fontColorGradient:
-    topLeft: {r: 1, g: 0.8476011, b: 0.08018869, a: 1}
-    topRight: {r: 0.7924528, g: 0.3132573, b: 0.0710217, a: 1}
-    bottomLeft: {r: 0.6226415, g: 0.15110022, b: 0.038180865, a: 1}
-    bottomRight: {r: 0.9433962, g: 0.7012394, b: 0.26254895, a: 1}
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
