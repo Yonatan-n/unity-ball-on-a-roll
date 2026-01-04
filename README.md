@@ -7,6 +7,8 @@
 * Collect coins to win
 * And so much more...
 
+Play in browser at: https://play.unity.com/en/games/894c454b-ef4e-4fd0-a535-bb107957973a/big-ball-adventure-web-desktop
+
 Main menu
   <img width="1750" height="983" alt="main_menu" src="https://github.com/user-attachments/assets/0e404b01-29b5-4626-bacb-d520435944a5" />
 
